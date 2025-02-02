@@ -10,4 +10,4 @@ fetch('https://api.fwdr.dev', { method: 'POST', body: {
     body: "This was sent from FWDR",
 } })
 ```
-# fwdr
+
