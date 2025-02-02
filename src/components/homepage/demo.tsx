@@ -4,6 +4,7 @@ import "./demo.css";
 export function Demo() {
     const [email, setEmail] = createSignal("");
     const [showSuccess, setShowSuccess] = createSignal(false);
+    const [showFailure, setShowFailure] = createSignal(false);
     const [isLoading, setIsLoading] = createSignal(false);
 
     async function sayHello(e: Event) {
@@ -11,35 +12,45 @@ export function Demo() {
 
         setIsLoading(true);
 
-        const response = await fetch("http://localhost:8080/", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                recipient: email(),
-                from: "bytebury@gmail.com",
-                subject: "Try It! From fwdr",
-                body: "You sent this from https://fwdr.dev"
-            })
-        });
+        try {
+            const response = await fetch("http://localhost:8080/", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    recipient: email(),
+                    from: "bytebury@gmail.com",
+                    subject: "Try It! From fwdr",
+                    body: "You sent this from https://fwdr.dev"
+                })
+            });
 
-        if (response.ok && response.status === 200) {
-            setShowSuccess(true);
-            setEmail("");
+            if (response.ok && response.status === 200) {
+                setShowSuccess(true);
+                setEmail("");
 
-            setTimeout(() => {
+                setTimeout(() => {
+                    setShowSuccess(false);
+                }, 4_000);
+            } else {
                 setShowSuccess(false);
-            }, 4_000);
-        } else {
-            setShowSuccess(false);
-            setEmail(email)
+                setShowFailure(true);
+                setEmail(email)
+            }
+            setShowFailure(false);
+        } catch {
+           setShowFailure(true);
+        } finally {
+            setIsLoading(false);
         }
 
-        setIsLoading(false);
     }
 
     return <form class="flex flex-col gap-4" onSubmit={sayHello}>
         <Show when={showSuccess()}>
-           <div class="w-full bg-green-300">We sent you an e-mail! Check your inbox or spam folder!</div>
+           <div class="w-full bg-green-600 py-4">We sent you an e-mail! Check your inbox or spam folder!</div>
+        </Show>
+        <Show when={showFailure()}>
+            <div class="w-full bg-red-600 py-4">Uh-oh, we weren't able to send you the e-mail...</div>
         </Show>
         <div class="flex flex-1 justify-center">
         <label class="sr-only" for="email">Email Address</label>
