@@ -1,0 +1,54 @@
+{
+  "_routing-hKi5ogrg.js": {
+    "file": "assets/routing-hKi5ogrg.js",
+    "name": "routing",
+    "imports": [
+      "_web-DHqATzos.js"
+    ]
+  },
+  "_web-DHqATzos.js": {
+    "file": "assets/web-DHqATzos.js",
+    "name": "web"
+  },
+  "src/routes/[...404].tsx?pick=default&pick=$css": {
+    "file": "assets/_...404_-C03DrnEs.js",
+    "name": "_...404_",
+    "src": "src/routes/[...404].tsx?pick=default&pick=$css",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_web-DHqATzos.js",
+      "_routing-hKi5ogrg.js"
+    ]
+  },
+  "src/routes/index.tsx?pick=default&pick=$css": {
+    "file": "assets/index-C3GZODeh.js",
+    "name": "index",
+    "src": "src/routes/index.tsx?pick=default&pick=$css",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_web-DHqATzos.js"
+    ],
+    "css": [
+      "assets/index-BiEsyGb4.css"
+    ]
+  },
+  "virtual:$vinxi/handler/client": {
+    "file": "assets/client-CAtwtyCS.js",
+    "name": "client",
+    "src": "virtual:$vinxi/handler/client",
+    "isEntry": true,
+    "imports": [
+      "_web-DHqATzos.js",
+      "_routing-hKi5ogrg.js"
+    ],
+    "dynamicImports": [
+      "src/routes/[...404].tsx?pick=default&pick=$css",
+      "src/routes/index.tsx?pick=default&pick=$css"
+    ],
+    "css": [
+      "assets/client-CkkmeEJm.css"
+    ]
+  }
+}
