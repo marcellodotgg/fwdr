@@ -1,10 +1,11 @@
 import {HeroHeader} from "~/components/homepage/hero-header";
+import {FeatureCard} from "~/components/homepage/feature-card";
 
 export default function Home() {
   return <>
     <main class="flex flex-col gap-16 pt-8">
       <HeroHeader />
-      <div class="container flex flex-col gap-4">
+      <section id="api_sample" class="container flex flex-col gap-4">
         <h1 class="text-3xl font-extrabold">Dead Simple API</h1>
         <p>
           Our goal is simplicity and efficiency. That's why our service is written in Rust. Our primary
@@ -24,8 +25,19 @@ export default function Home() {
  });`}
           </code>
         </pre>
-      </div>
-      <section class="bg-primary-300 border border-primary-200">
+      </section>
+      <section id="features" class="container flex flex-col gap-4">
+        <h1 class="font-extrabold text-3xl">Features</h1>
+        <ul class="grid grid-auto-rows grid-cols-1 grid-auto-rows-[1fr] md:grid-cols-2 gap-4">
+          <li><FeatureCard name="E-mail Anywhere">E-mail anyone from anywhere and on any device. Very simple integration, just call our API.</FeatureCard></li>
+          <li><FeatureCard name="Dashboard">Users get access to their dashboard to see what e-mails they've gotten and what e-mails they've sent.</FeatureCard></li>
+          <li><FeatureCard name="Attachments" isPro={true}>Send attachments like a pro.</FeatureCard></li>
+          <li><FeatureCard name="Multiple Recipients" isPro={true}>Send a single e-mail to multiple addresses all in one call.</FeatureCard></li>
+          <li><FeatureCard name="Carbon Copy and Blind Carbon Copy" isPro={true}>Support for BCC and CC at your fingertips.</FeatureCard></li>
+          <li><FeatureCard name="Rejection Notifications" isPro={true}>Find out if user's got your e-mail and get notified if they haven't.</FeatureCard></li>
+        </ul>
+      </section>
+      <section id="from_the_team" class="bg-primary-300 border border-primary-200">
         <div class="container py-8 flex flex-col gap-4">
           <img class="mx-auto rounded-full" width={128} height={128} src="https://avatars.githubusercontent.com/u/104793781?v=4" alt="Marcello's Profile Image" />
           <h1 class="font-extrabold text-3xl text-center">From the Team</h1>
