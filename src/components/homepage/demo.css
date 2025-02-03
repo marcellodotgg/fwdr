@@ -1,5 +1,5 @@
 button[type="submit"] {
-    @apply bg-primary text-white font-bold;
+    @apply bg-primary-100 text-white font-bold;
     @apply rounded-lg rounded-l-none px-4;
 }
 
@@ -12,6 +12,6 @@ button:disabled:hover {
 }
 
 input[type="email"] {
-    @apply bg-black rounded-lg rounded-r-none border border-primary;
+    @apply bg-black rounded-lg rounded-r-none border border-primary-100;
     @apply py-2 px-4 border-r-0 focus:outline-none;
 }

@@ -25,7 +25,7 @@ export default function Home() {
           </code>
         </pre>
       </div>
-      <section class="bg-[#060e1c]">
+      <section class="bg-primary-300 border border-primary-200">
         <div class="container py-8 flex flex-col gap-4">
           <img class="mx-auto rounded-full" width={128} height={128} src="https://avatars.githubusercontent.com/u/104793781?v=4" alt="Marcello's Profile Image" />
           <h1 class="font-extrabold text-3xl text-center">From the Team</h1>
