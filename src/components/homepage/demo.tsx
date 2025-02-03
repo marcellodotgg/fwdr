@@ -17,7 +17,7 @@ export function Demo() {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    recipient: email(),
+                    to: email(),
                     from: "bytebury@gmail.com",
                     subject: "Try It! From fwdr",
                     body: "You sent this from https://fwdr.dev"

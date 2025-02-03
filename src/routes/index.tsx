@@ -18,7 +18,7 @@ export default function Home() {
             {`fetch('https://api.fwdr.dev', { 
     method: 'POST', 
     body: {
-        recipient: "sample@fwdr.dev",
+        to: "sample@fwdr.dev",
         subject: "From FWDR",
         body: "This was sent from FWDR",
     } 
@@ -30,11 +30,11 @@ export default function Home() {
         <h1 class="font-extrabold text-3xl">Features</h1>
         <ul class="grid grid-auto-rows grid-cols-1 grid-auto-rows-[1fr] md:grid-cols-2 gap-4">
           <li><FeatureCard name="E-mail Anywhere">E-mail anyone from anywhere and on any device. Very simple integration, just call our API.</FeatureCard></li>
-          <li><FeatureCard name="Dashboard">Users get access to their dashboard to see what e-mails they've gotten and what e-mails they've sent.</FeatureCard></li>
+          <li><FeatureCard name="Dashboard">Users get access to their dashboard to see what e-mails they've sent/recieved.</FeatureCard></li>
           <li><FeatureCard name="Attachments" isPro={true}>Send attachments like a pro.</FeatureCard></li>
           <li><FeatureCard name="Multiple Recipients" isPro={true}>Send a single e-mail to multiple addresses all in one call.</FeatureCard></li>
           <li><FeatureCard name="Carbon Copy and Blind Carbon Copy" isPro={true}>Support for BCC and CC at your fingertips.</FeatureCard></li>
-          <li><FeatureCard name="Rejection Notifications" isPro={true}>Find out if user's got your e-mail and get notified if they haven't.</FeatureCard></li>
+          <li><FeatureCard name="Rejection Notifications" isPro={true}>Find out if users received your e-mail and get notified if they haven't.</FeatureCard></li>
         </ul>
       </section>
       <section id="from_the_team" class="bg-primary-300 border border-primary-200">
