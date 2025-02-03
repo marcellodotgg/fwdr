@@ -11,10 +11,19 @@
   :root {
     --background-rgb: 0, 0, 0;
     --foreground-rgb: 255, 255, 255;
+    color: #191103;
   }
 }
 
 body {
   background: rgb(var(--background-rgb));
   color: rgb(var(--foreground-rgb));
+}
+
+pre {
+  white-space: pre;
+}
+
+button, input, a {
+  @apply transition-colors duration-300 ease-in-out;
 }

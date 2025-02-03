@@ -30,7 +30,7 @@ export function Demo() {
 
                 setTimeout(() => {
                     setShowSuccess(false);
-                }, 4_000);
+                }, 5_000);
             } else {
                 setShowSuccess(false);
                 setShowFailure(true);
@@ -47,10 +47,10 @@ export function Demo() {
 
     return <form class="flex flex-col gap-4" onSubmit={sayHello}>
         <Show when={showSuccess()}>
-           <div class="w-full bg-green-600 py-4">We sent you an e-mail! Check your inbox or spam folder!</div>
+           <div class="w-full bg-primary-200 py-4">👌 We sent you an e-mail! Check your inbox or spam folder!</div>
         </Show>
         <Show when={showFailure()}>
-            <div class="w-full bg-red-600 py-4">Uh-oh, we weren't able to send you the e-mail...</div>
+            <div class="w-full bg-primary-200 py-4">😩 Uh-oh, the demo gods are not with us. We couldn't send the e-mail.</div>
         </Show>
         <div class="flex flex-1 justify-center">
         <label class="sr-only" for="email">Email Address</label>
