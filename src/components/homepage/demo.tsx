@@ -13,13 +13,13 @@ export function Demo() {
         setIsLoading(true);
 
         try {
-            const response = await fetch("http://localhost:8080/", {
+            const response = await fetch("https://api.fwdr.dev", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     to: email(),
                     from: "bytebury@gmail.com",
-                    subject: "Try It! From fwdr",
+                    subject: "Hello World from fwdr",
                     body: "You sent this from https://fwdr.dev"
                 })
             });
