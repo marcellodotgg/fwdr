@@ -5,6 +5,7 @@ export function Demo() {
     const [email, setEmail] = createSignal("");
     const [showSuccess, setShowSuccess] = createSignal(false);
     const [showFailure, setShowFailure] = createSignal(false);
+    const [message, setMessage] = createSignal("😩 You've hit your limit, try again in 15 minutes.");
     const [isLoading, setIsLoading] = createSignal(false);
 
     async function sayHello(e: Event) {
@@ -21,7 +22,7 @@ export function Demo() {
                     from: "bytebury@gmail.com",
                     subject: "Hello World from fwdr",
                     body: "You sent this from https://fwdr.dev"
-                })
+                }),
             });
 
             if (response.ok && response.status === 200) {
@@ -31,14 +32,21 @@ export function Demo() {
                 setTimeout(() => {
                     setShowSuccess(false);
                 }, 5_000);
-            } else {
+            } else if (response.status === 429) {
+                setMessage("😩 You've hit your limit, try again in 15 minutes.");
                 setShowSuccess(false);
                 setShowFailure(true);
-                setEmail(email)
+                setEmail(email);
+            } else {
+                setMessage("😩 You've hit your limit, try again in 15 minutes.");
+                setShowSuccess(false);
+                setShowFailure(true);
+                setEmail(email);
             }
             setShowFailure(false);
-        } catch {
+        } catch (e) {
            setShowFailure(true);
+           setShowSuccess(false);
         } finally {
             setIsLoading(false);
         }
@@ -50,7 +58,7 @@ export function Demo() {
            <div class="w-full bg-primary-200 py-4">👌 We sent you an e-mail! Check your inbox or spam folder!</div>
         </Show>
         <Show when={showFailure()}>
-            <div class="w-full bg-primary-200 py-4">😩 Uh-oh, the demo gods are not with us. We couldn't send the e-mail.</div>
+            <div class="w-full bg-primary-200 py-4">{message()}</div>
         </Show>
         <div class="flex flex-1 justify-center">
         <label class="sr-only" for="email">Email Address</label>
