@@ -34,8 +34,18 @@
       "assets/index-BnXmAupO.css"
     ]
   },
+  "src/routes/login.tsx?pick=default&pick=$css": {
+    "file": "assets/login-B9hsydpe.js",
+    "name": "login",
+    "src": "src/routes/login.tsx?pick=default&pick=$css",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_web-DHqATzos.js"
+    ]
+  },
   "virtual:$vinxi/handler/client": {
-    "file": "assets/client-vFwk_W60.js",
+    "file": "assets/client-B8qtnYMp.js",
     "name": "client",
     "src": "virtual:$vinxi/handler/client",
     "isEntry": true,
@@ -45,7 +55,8 @@
     ],
     "dynamicImports": [
       "src/routes/[...404].tsx?pick=default&pick=$css",
-      "src/routes/index.tsx?pick=default&pick=$css"
+      "src/routes/index.tsx?pick=default&pick=$css",
+      "src/routes/login.tsx?pick=default&pick=$css"
     ],
     "css": [
       "assets/client-BLe47e1a.css"
