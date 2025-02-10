@@ -1,7 +1,16 @@
 import {HeroHeader} from "~/components/homepage/hero-header";
 import {FeatureCard} from "~/components/homepage/feature-card";
+import {createSignal, onMount} from "solid-js";
+import axios from "axios";
 
 export default function Home() {
+  const [user, setUser] = createSignal(null);
+
+  onMount(async () => {
+    const user = await axios.get("https://api.fwdr.dev/auth/whoami", {withCredentials: true});
+    setUser(user.data);
+  });
+
   return <>
     <main class="flex flex-col gap-16 pt-8">
       <HeroHeader />
@@ -13,14 +22,14 @@ export default function Home() {
           You can call our API from anywhere, on any device, and in any programming language. Below is an example of
           how you can use fwdr directly in the browser.
         </p>
-        <pre class="bg-primary-300 p-4 w-full overflow-x-auto border border-primary-200">
+        <pre class="bg-primary-300 p-4 w-full overflow-x-auto border border-primary-200 text-sm">
           <code>
             {`fetch('https://api.fwdr.dev', { 
     method: 'POST', 
     body: {
-        to: "sample@fwdr.dev",
-        subject: "From FWDR",
-        body: "This was sent from FWDR",
+        to: "${user()?.email ?? 'example@fwdr.dev'}",
+        subject: "fwdr demo",
+        body: "${user()?.given_name ?? 'Hey'}, Welcome to fwdr",
     } 
  });`}
           </code>

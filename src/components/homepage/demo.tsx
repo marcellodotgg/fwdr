@@ -14,7 +14,7 @@ export function Demo() {
         setIsLoading(true);
 
         try {
-            const response = await fetch("https://api.fwdr.dev", {
+                const response = await fetch("https://api.fwdr.dev", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -23,6 +23,7 @@ export function Demo() {
                     subject: "Hello World from fwdr",
                     body: "You sent this from https://fwdr.dev"
                 }),
+                credentials: "include",
             });
 
             if (response.ok && response.status === 200) {
