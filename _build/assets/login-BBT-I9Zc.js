@@ -1,0 +1,1 @@
+import{i as n,r as o,t as i,h as a}from"./web-Cf6LeYdj.js";var l=i("<button>Sign in With Google");function s(){async function e(){window.location.href="http://localhost:8080/auth/google"}return(()=>{var t=n(l);return t.$$click=e,o(),t})()}a(["click"]);export{s as default};
