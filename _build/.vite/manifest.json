@@ -1,57 +1,14 @@
 {
-  "_routing-DGe0W2tu.js": {
-    "file": "assets/routing-DGe0W2tu.js",
-    "name": "routing",
-    "imports": [
-      "_web-Cf6LeYdj.js"
-    ]
+  "_app-!~{005}~.js": {
+    "file": "assets/app-BLe47e1a.css",
+    "src": "_app-!~{005}~.js"
   },
-  "_web-Cf6LeYdj.js": {
-    "file": "assets/web-Cf6LeYdj.js",
-    "name": "web"
-  },
-  "src/routes/[...404].tsx?pick=default&pick=$css": {
-    "file": "assets/_...404_-CApMzZS6.js",
-    "name": "_...404_",
-    "src": "src/routes/[...404].tsx?pick=default&pick=$css",
-    "isEntry": true,
-    "isDynamicEntry": true,
+  "_app-CUCZCiYL.js": {
+    "file": "assets/app-CUCZCiYL.js",
+    "name": "app",
     "imports": [
-      "_web-Cf6LeYdj.js",
-      "_routing-DGe0W2tu.js"
-    ]
-  },
-  "src/routes/index.tsx?pick=default&pick=$css": {
-    "file": "assets/index-BuThRdxY.js",
-    "name": "index",
-    "src": "src/routes/index.tsx?pick=default&pick=$css",
-    "isEntry": true,
-    "isDynamicEntry": true,
-    "imports": [
-      "_web-Cf6LeYdj.js"
-    ],
-    "css": [
-      "assets/index-BnXmAupO.css"
-    ]
-  },
-  "src/routes/login.tsx?pick=default&pick=$css": {
-    "file": "assets/login-BBT-I9Zc.js",
-    "name": "login",
-    "src": "src/routes/login.tsx?pick=default&pick=$css",
-    "isEntry": true,
-    "isDynamicEntry": true,
-    "imports": [
-      "_web-Cf6LeYdj.js"
-    ]
-  },
-  "virtual:$vinxi/handler/client": {
-    "file": "assets/client-CgkVC980.js",
-    "name": "client",
-    "src": "virtual:$vinxi/handler/client",
-    "isEntry": true,
-    "imports": [
-      "_web-Cf6LeYdj.js",
-      "_routing-DGe0W2tu.js"
+      "_web-B28KoF45.js",
+      "_routing-DGPisFBg.js"
     ],
     "dynamicImports": [
       "src/routes/[...404].tsx?pick=default&pick=$css",
@@ -59,7 +16,65 @@
       "src/routes/login.tsx?pick=default&pick=$css"
     ],
     "css": [
-      "assets/client-BLe47e1a.css"
+      "assets/app-BLe47e1a.css"
+    ]
+  },
+  "_routing-DGPisFBg.js": {
+    "file": "assets/routing-DGPisFBg.js",
+    "name": "routing",
+    "imports": [
+      "_web-B28KoF45.js"
+    ]
+  },
+  "_web-B28KoF45.js": {
+    "file": "assets/web-B28KoF45.js",
+    "name": "web"
+  },
+  "src/routes/[...404].tsx?pick=default&pick=$css": {
+    "file": "assets/_...404_-CAm0dPIo.js",
+    "name": "_...404_",
+    "src": "src/routes/[...404].tsx?pick=default&pick=$css",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_web-B28KoF45.js",
+      "_routing-DGPisFBg.js"
+    ]
+  },
+  "src/routes/index.tsx?pick=default&pick=$css": {
+    "file": "assets/index-CltOxUSR.js",
+    "name": "index",
+    "src": "src/routes/index.tsx?pick=default&pick=$css",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_web-B28KoF45.js",
+      "_app-CUCZCiYL.js",
+      "_routing-DGPisFBg.js"
+    ],
+    "css": [
+      "assets/index-BnXmAupO.css"
+    ]
+  },
+  "src/routes/login.tsx?pick=default&pick=$css": {
+    "file": "assets/login-aJRVqUiE.js",
+    "name": "login",
+    "src": "src/routes/login.tsx?pick=default&pick=$css",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_web-B28KoF45.js"
+    ]
+  },
+  "virtual:$vinxi/handler/client": {
+    "file": "assets/client-BeDdmXcq.js",
+    "name": "client",
+    "src": "virtual:$vinxi/handler/client",
+    "isEntry": true,
+    "imports": [
+      "_app-CUCZCiYL.js",
+      "_web-B28KoF45.js",
+      "_routing-DGPisFBg.js"
     ]
   }
 }
