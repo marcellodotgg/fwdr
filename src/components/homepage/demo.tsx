@@ -1,5 +1,6 @@
 import {createSignal, Show} from "solid-js";
 import "./demo.css";
+import {BASE_URL} from "~/app";
 
 export function Demo() {
     const [email, setEmail] = createSignal("");
@@ -14,7 +15,7 @@ export function Demo() {
         setIsLoading(true);
 
         try {
-                const response = await fetch("https://api.fwdr.dev", {
+                const response = await fetch(BASE_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -44,14 +45,14 @@ export function Demo() {
                 setShowFailure(true);
                 setEmail(email);
             }
-            setShowFailure(false);
         } catch (e) {
-           setShowFailure(true);
+            if (!showSuccess()) {
+                setShowFailure(true);
+            }
            setShowSuccess(false);
         } finally {
             setIsLoading(false);
         }
-
     }
 
     return <form class="flex flex-col gap-4" onSubmit={sayHello}>

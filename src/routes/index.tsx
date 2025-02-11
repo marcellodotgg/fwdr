@@ -2,12 +2,13 @@ import {HeroHeader} from "~/components/homepage/hero-header";
 import {FeatureCard} from "~/components/homepage/feature-card";
 import {createSignal, onMount} from "solid-js";
 import axios from "axios";
+import {BASE_URL} from "~/app";
 
 export default function Home() {
   const [user, setUser] = createSignal(null);
 
   onMount(async () => {
-    const user = await axios.get("https://api.fwdr.dev/auth/whoami", {withCredentials: true});
+    const user = await axios.get(`${BASE_URL}/auth/whoami`, {withCredentials: true});
     setUser(user.data);
   });
 
