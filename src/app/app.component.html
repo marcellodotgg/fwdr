@@ -1,58 +1,74 @@
-<div class="flex flex-col gap-16 py-8">
-<app-hero-header/>
-<main class="flex flex-col gap-16">
-  <section id="api_sample" class="container flex flex-col gap-4">
-    <h1 class="text-3xl">Dead Simple API</h1>
-    <p>
-      Our goal is simplicity and efficiency. That's why our service is written in Rust. Our primary
-      endpoint is right on the root of our endpoint. Just make a <code>POST</code> and we'll take care of the rest.
-      You can call our API from anywhere, on any device, and in any programming language. Below is an example of
-      how you can use fwdr directly in the browser.
-    </p>
-    <pre class="bg-primary-300 p-4 w-full overflow-x-auto border border-primary-200 text-sm"><code>fetch('https://api.fwdr.dev', &#123;
-    method: 'POST',
-    body: &#123;
-        to: 'example&#64;fwdr.dev',
-        subject: "fwdr demo",
-        body: "Hey, Welcome to fwdr",
-    &#125;
-&#125;);</code></pre>
-  </section>
-  <section id="features" class="container flex flex-col gap-4">
-    <h1 class="text-3xl">Features</h1>
-    <ul class="grid grid-auto-rows grid-cols-1 grid-auto-rows-[1fr] md:grid-cols-2 gap-4">
-      <li><app-feature-card name="E-mail Anywhere">E-mail anyone from anywhere and on any device. Very simple integration, just call our API.</app-feature-card></li>
-      <li><app-feature-card name="Dashboard">Users get access to their dashboard to see what e-mails they've sent/received.</app-feature-card></li>
-      <li><app-feature-card name="Attachments" isPro="true">Send attachments like a pro.</app-feature-card></li>
-      <li><app-feature-card name="Multiple Recipients" isPro="true">Send a single e-mail to multiple addresses all in one call.</app-feature-card></li>
-      <li><app-feature-card name="Carbon Copy and Blind Carbon Copy" isPro="true">Support for BCC and CC at your fingertips.</app-feature-card></li>
-      <li><app-feature-card name="Rejection Notifications" isPro="true">Find out if users received your e-mail and get notified if they haven't.</app-feature-card></li>
-    </ul>
-  </section>
-  <section id="from_the_team" class="bg-primary-300 border border-primary-200">
-    <div class="container py-8 flex flex-col gap-4">
-      <img class="mx-auto rounded-full size-[128px]" width="128" height="128"
-           ngSrc="https://avatars.githubusercontent.com/u/104793781?v=4" alt="Marcello's Profile Image" />
-      <h1 class="text-3xl text-center">From the Team</h1>
-      <p>
-        We are still in our beta phase. We are doing some analysis on how we can make our service better. Therefore,
-        at any moment anything can change; including the API itself. So, please keep that in mind until we work
-        towards our stable release of fwdr.
-      </p>
-      <p>
-        As mentioned above, our core values at fwdr are simplicity and efficiency for developers. What good is an
-        e-mail forwarding service if it's too cumbersome to use? Right now, simplicity is easy, but in the future
-        we plan on having fwdr become feature-rich &mdash; without compromising our core values.
-      </p>
-      <p>
-        Stay tuned to witness fwdr blossom.
-      </p>
-      <p>&mdash; Marcello, Core Developer</p>
+<div class="flex flex-col gap-10 pt-8 pb-16">
+  <app-hero-header/>
+  <div class="container">
+    <div class="flex items-center gap-4 p-3 bg-yellow-600/15 border border-yellow-400/15 justify-center">
+      <div class="text-yellow-600">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+        </svg>
+      </div>
+      We are working on building out fwdr. Only the demo is available for now. Please come back soon to check out our progress.
     </div>
-  </section>
-  <section id="learn_more" class="container flex flex-col gap-4">
-    <h1 class="text-3xl">Peak Your Interest?</h1>
-    <p>Well, if you have any other questions regarding fwdr, fwd me a message below!</p>
-  </section>
-</main>
+  </div>
+  <main class="flex flex-col gap-16">
+    <section id="api_sample" class="container flex flex-col gap-4">
+      <h1 class="text-3xl">Dead Simple API</h1>
+      <p>
+        Our goal is simplicity and efficiency. That's why our service is written in Rust. Our primary
+        endpoint is right on the root of our endpoint. Just make a <code>POST</code> and we'll take care of the rest.
+        You can call our API from anywhere, on any device, and in any programming language. Below is an example of
+        how you can use fwdr directly in the browser.
+      </p>
+      <pre class="bg-primary-300 p-4 w-full overflow-x-auto border border-primary-200 text-sm"><code>fetch('https://api.fwdr.dev', &#123;
+      method: 'POST',
+      body: &#123;
+          to: 'example&#64;fwdr.dev',
+          subject: "fwdr demo",
+          body: "Hey, Welcome to fwdr",
+      &#125;
+  &#125;);</code></pre>
+    </section>
+    <section id="features" class="container flex flex-col gap-4">
+      <h1 class="text-3xl">Features</h1>
+      <ul class="grid grid-auto-rows grid-cols-1 grid-auto-rows-[1fr] md:grid-cols-2 gap-4">
+        <li><app-feature-card name="E-mail Anywhere">E-mail anyone from anywhere and on any device. Very simple integration, just call our API.</app-feature-card></li>
+        <li><app-feature-card name="Dashboard">Users get access to their dashboard to see what e-mails they've sent/received.</app-feature-card></li>
+        <li><app-feature-card name="Attachments" isPro="true">Send attachments like a pro.</app-feature-card></li>
+        <li><app-feature-card name="Multiple Recipients" isPro="true">Send a single e-mail to multiple addresses all in one call.</app-feature-card></li>
+        <li><app-feature-card name="Carbon Copy and Blind Carbon Copy" isPro="true">Support for BCC and CC at your fingertips.</app-feature-card></li>
+        <li><app-feature-card name="Rejection Notifications" isPro="true">Find out if users received your e-mail and get notified if they haven't.</app-feature-card></li>
+      </ul>
+    </section>
+    <section id="from_the_team" class="bg-primary-300 border border-primary-200">
+      <div class="container py-8 flex flex-col gap-4">
+        <img class="mx-auto rounded-full size-[128px]" width="128" height="128"
+             ngSrc="https://avatars.githubusercontent.com/u/104793781?v=4" alt="Marcello's Profile Image" />
+        <h1 class="text-3xl text-center">From the Team</h1>
+        <p>
+          We are still in our beta phase. We are doing some analysis on how we can make our service better. Therefore,
+          at any moment anything can change; including the API itself. So, please keep that in mind until we work
+          towards our stable release of fwdr.
+        </p>
+        <p>
+          As mentioned above, our core values at fwdr are simplicity and efficiency for everyone. What good is an
+          e-mail forwarding service if it's too cumbersome to use? We plan on having fwdr become feature-rich &mdash; without compromising our core values.
+        </p>
+        <p>
+          Stay tuned to witness fwdr blossom.
+        </p>
+        <p>&mdash; Marcello, Core Developer</p>
+      </div>
+    </section>
+    <section id="learn_more" class="container flex flex-col gap-4">
+      <h1 class="text-3xl">Peak Your Interest?</h1>
+      <p>Well, if you have any other questions regarding fwdr, fwd a message below!</p>
+      (Coming Soon)
+    </section>
+  </main>
 </div>
+<footer class="border-t border-primary-200">
+  <div class="container py-4 text-sm">
+    <strong class="block text-lg">Let's work together,</strong>
+    &copy; Created by Bytebury LLC
+  </div>
+</footer>
