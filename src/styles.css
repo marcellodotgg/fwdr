@@ -41,3 +41,20 @@ h1 {
 h2 {
   @apply font-bold;
 }
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"] {
+  @apply rounded-lg py-2 px-4 focus:outline-none;
+}
+
+button[type="submit"] {
+  @apply rounded-lg px-4 font-bold text-white;
+}
+
+button[type="submit"]:disabled {
+  @apply opacity-80;
+}
