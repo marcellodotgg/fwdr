@@ -1,12 +1,10 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from "@angular/core";
+import { HeroHeaderComponent } from "./pages/homepage/hero-header/hero-header.component";
+import { FeatureCardComponent } from "./pages/homepage/feature-card/feature-card.component";
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  selector: "app-root",
+  imports: [HeroHeaderComponent, FeatureCardComponent],
+  templateUrl: "./app.component.html",
 })
-export class AppComponent {
-  title = 'fwdr2';
-}
+export class AppComponent {}

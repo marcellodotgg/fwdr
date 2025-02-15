@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --foreground-rgb: rgb(255, 255, 255);
+  --background-rgb: rgb(0, 0, 0);
+}
+
+@theme {
+  --color-primary: #060e1c;
+  --color-primary-50: #11274c;
+  --color-primary-100: #0c1b35;
+  --color-primary-200: #091429;
+  --color-primary-300: #030710;
+}
+
+@utility container {
+  margin: auto;
+  padding: 0 1rem;
+}
+
+body {
+  background: var(--background-rgb);
+  color: var(--foreground-rgb);
+}
+
+pre {
+  white-space: pre;
+}
+
+button,
+input,
+a {
+  @apply transition-colors duration-300 ease-in-out;
+}
+
+h1 {
+  @apply font-extrabold;
+}
+
+h2 {
+  @apply font-bold;
+}
