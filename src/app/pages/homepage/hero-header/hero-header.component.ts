@@ -12,7 +12,7 @@ import { DemoComponent } from "../../../components/demo/demo.component";
         <app-badge>beta</app-badge>
       </h1>
       <p>
-        The self-proclaimed, world's most fastest and simple e-mail forwarder
+        The self-proclaimed, world's fastest and most simple e-mail forwarder
         for everyone.
       </p>
       <div
