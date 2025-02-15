@@ -13,6 +13,7 @@
   --color-primary-300: #030710;
 }
 
+/*noinspection ALL*/
 @utility container {
   margin: auto;
   padding: 0 1rem;
