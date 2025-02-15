@@ -6,7 +6,6 @@ import {
   Validators,
 } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
-import { tap } from "rxjs";
 
 @Component({
   selector: "app-demo",
@@ -34,7 +33,7 @@ export class DemoComponent {
           subject: "Hello World, from fwdr",
           body: "This e-mail was sent from the demo at https://fwdr.dev",
         },
-        { responseType: "text" },
+        { responseType: "text", withCredentials: true },
       )
       .subscribe({
         next: () => {
@@ -42,15 +41,10 @@ export class DemoComponent {
             "👌 We sent you an e-mail! Check your inbox or spam folder!",
           );
           this.form.reset();
-
-          setTimeout(() => {
-            this.message.set("");
-          }, 6_000);
-
           this.isLoading.set(false);
         },
         error: (err) => {
-          if (err.status === 401) {
+          if (err.status === 429) {
             this.message.set(
               "😩 You've hit your limit, try again in 15 minutes.",
             );
