@@ -5,8 +5,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from "@angular/forms";
-import { AnalyticsService } from "../../services/analytics.service";
-import { Mailer } from "../../services/mailer.service";
+import { AnalyticsService } from "../../../../services/analytics.service";
+import { Mailer } from "../../../../services/mailer.service";
 
 @Component({
   selector: "app-demo",

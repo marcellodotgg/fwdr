@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { BadgeComponent } from "../../../components/badge/badge.component";
-import { DemoComponent } from "../../../components/demo/demo.component";
+import { DemoComponent } from "./demo/demo.component";
 
 @Component({
   selector: "app-hero-header",

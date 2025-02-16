@@ -9,6 +9,7 @@ import { Mailer } from "../../services/mailer.service";
 import { finalize } from "rxjs";
 import { BannerComponent } from "../banner/banner.component";
 import { Variant } from "../../enums/variants.enum";
+import { AnalyticsService } from "../../services/analytics.service";
 
 @Component({
   selector: "app-contact-us",
@@ -39,7 +40,10 @@ export class ContactUsComponent {
     undefined,
   );
 
-  constructor(private readonly mailer: Mailer) {}
+  constructor(
+    private readonly mailer: Mailer,
+    private readonly analytics: AnalyticsService,
+  ) {}
 
   sendEmail(): void {
     this.isLoading.set(true);
@@ -53,6 +57,7 @@ export class ContactUsComponent {
       .pipe(finalize(() => this.isLoading.set(false)))
       .subscribe({
         next: () => {
+          this.analytics.sendEvent("contact_us_send");
           this.form.reset();
           this.message.set({
             variant: Variant.Success,
@@ -67,6 +72,12 @@ export class ContactUsComponent {
           if (err.status === 429) {
             content =
               "You have already tried contacting us, please try again later.";
+            this.analytics.sendEvent("contact_us_send_limited");
+          } else {
+            this.analytics.sendEvent("contact_us_send_error", {
+              message: err.message,
+              status: err.status,
+            });
           }
 
           this.message.set({ content, variant: Variant.Failure });
