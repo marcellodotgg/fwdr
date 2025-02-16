@@ -4,8 +4,8 @@
   }
   <div class="flex flex-col gap-4">
     <div class="flex flex-col gap-1">
-      <label class="font-extrabold" for="email">Email Address</label>
-      <input formControlName="email" required id="email" type="email" placeholder="Enter Your E-mail Address" autocomplete="email" class="w-full border border-primary-100 ring-primary-50" maxlength="100" />
+      <label class="font-extrabold" for="contact_us_email">Email Address</label>
+      <input formControlName="email" required id="contact_us_email" type="email" placeholder="Enter Your E-mail Address" autocomplete="email" class="w-full border border-primary-100 ring-primary-50" maxlength="100" />
       @if (form.hasError('email', 'email')) {
         <div class="text-rose-700"> Please enter a valid e-mail.</div>
       }
@@ -15,8 +15,8 @@
     </div>
 
     <div class="flex flex-col gap-1">
-      <label class="font-extrabold" for="full_name">Full Name</label>
-      <input formControlName="name" required id="full_name" type="text" placeholder="Full Name" autocomplete="name" class="w-full border border-primary-100 ring-primary-50" maxlength="40" />
+      <label class="font-extrabold" for="contact_us_full_name">Full Name</label>
+      <input formControlName="name" required id="contact_us_full_name" type="text" placeholder="Full Name" autocomplete="name" class="w-full border border-primary-100 ring-primary-50" maxlength="40" />
       @if (form.hasError('minlength', 'name')) {
         <div class="text-rose-700"> Please enter at least {{ form.get('name')?.errors?.['minlength'].requiredLength }} characters.</div>
       }
@@ -26,8 +26,8 @@
     </div>
 
     <div class="flex flex-col gap-1">
-      <label class="font-extrabold" for="body">Message</label>
-      <textarea id="body" formControlName="body" placeholder="Enter your message.." class="w-full border border-primary-100 p-4 ring-primary-50 min-h-28 max-h-60" minlength="10" maxlength="400" required></textarea>
+      <label class="font-extrabold" for="contact_us_body">Message</label>
+      <textarea id="contact_us_body" formControlName="body" placeholder="Enter your message.." class="w-full border border-primary-100 p-4 ring-primary-50 min-h-28 max-h-60" minlength="10" maxlength="400" required></textarea>
       @if (form.hasError('minlength', 'body')) {
         <div class="text-rose-700">Please fill out this form a little bit more.</div>
       }
