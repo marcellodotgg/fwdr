@@ -6,6 +6,7 @@ import {
   Validators,
 } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
+import { AnalyticsService } from "../../services/analytics.service";
 
 @Component({
   selector: "app-demo",
@@ -21,7 +22,10 @@ export class DemoComponent {
   isLoading = signal(false);
   message = signal("");
 
-  constructor(private readonly http: HttpClient) {}
+  constructor(
+    private readonly analytics: AnalyticsService,
+    private readonly http: HttpClient,
+  ) {}
 
   sendEmail(): void {
     this.isLoading.set(true);
@@ -37,6 +41,7 @@ export class DemoComponent {
       )
       .subscribe({
         next: () => {
+          this.analytics.sendEvent("demo_send_email");
           this.message.set(
             "👌 We sent you an e-mail! Check your inbox or spam folder!",
           );
@@ -48,13 +53,16 @@ export class DemoComponent {
             this.message.set(
               "😩 You've hit your limit, try again in 15 minutes.",
             );
+            this.analytics.sendEvent("demo_send_email_hit_limit");
           } else {
             this.message.set(
               "😩 Something weird happened. It's not you it's us.",
             );
+            this.analytics.sendEvent("demo_send_email_error", {
+              error_message: err.message,
+              status: err.status,
+            });
           }
-
-          console.log(err);
           this.isLoading.set(false);
         },
       });
