@@ -47,14 +47,15 @@ input[type="password"],
 input[type="email"],
 input[type="url"],
 input[type="search"],
-input[type="tel"] {
-  @apply rounded-lg py-2 px-4 focus:outline-none;
+input[type="tel"],
+textarea {
+  @apply py-2 px-4 focus:outline-none focus:ring-1;
 }
 
 button[type="submit"] {
-  @apply rounded-lg px-4 font-bold text-white;
+  @apply px-4 font-bold text-white cursor-pointer;
 }
 
 button[type="submit"]:disabled {
-  @apply opacity-80;
+  @apply opacity-80 cursor-not-allowed;
 }

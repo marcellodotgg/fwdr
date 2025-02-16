@@ -5,8 +5,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from "@angular/forms";
-import { HttpClient } from "@angular/common/http";
 import { AnalyticsService } from "../../services/analytics.service";
+import { Mailer } from "../../services/mailer.service";
 
 @Component({
   selector: "app-demo",
@@ -24,21 +24,17 @@ export class DemoComponent {
 
   constructor(
     private readonly analytics: AnalyticsService,
-    private readonly http: HttpClient,
+    private readonly mailer: Mailer,
   ) {}
 
   sendEmail(): void {
     this.isLoading.set(true);
-    this.http
-      .post(
-        "https://api.fwdr.dev",
-        {
-          to: this.form.value.email,
-          subject: "Hello World, from fwdr",
-          body: "This e-mail was sent from the demo at https://fwdr.dev",
-        },
-        { responseType: "text", withCredentials: true },
-      )
+    this.mailer
+      .sendEmail({
+        to: this.form.value.email ?? "",
+        subject: "Hello World, from fwdr",
+        body: "This e-mail was sent from the demo at https://fwdr.dev",
+      })
       .subscribe({
         next: () => {
           this.analytics.sendEvent("demo_send_email");
