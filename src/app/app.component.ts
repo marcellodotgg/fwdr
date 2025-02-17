@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { ContactUsComponent } from "./components/contact-us/contact-us.component";
 import { BannerComponent } from "./components/banner/banner.component";
 import { Variant } from "./enums/variants.enum";
+import { NavbarComponent } from "./components/navbar/navbar.component";
 
 @Component({
   selector: "app-root",
@@ -16,6 +17,7 @@ import { Variant } from "./enums/variants.enum";
     ReactiveFormsModule,
     ContactUsComponent,
     BannerComponent,
+    NavbarComponent,
   ],
   templateUrl: "./app.component.html",
 })
