@@ -37,8 +37,6 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.auth.whoAmI().subscribe();
-
     this.router.events.subscribe(() => {
       this.hideDrawer();
     });
