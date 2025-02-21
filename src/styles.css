@@ -3,6 +3,7 @@
 :root {
   --foreground-rgb: rgb(255, 255, 255);
   --background-rgb: rgb(0, 0, 0);
+  --drawer-bg: #070707;
 }
 
 @theme {
@@ -15,7 +16,7 @@
 
 /*noinspection ALL*/
 @utility container {
-  @apply m-auto px-4
+  @apply m-auto px-4;
 }
 
 body {
@@ -33,6 +34,10 @@ a {
   @apply transition-colors duration-300 ease-in-out;
 }
 
+button, a {
+  @apply hover:cursor-pointer;
+}
+
 h1 {
   @apply font-extrabold;
 }
@@ -48,7 +53,7 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 textarea {
-  @apply py-2 px-4 focus:outline-none focus:ring-1;
+  @apply py-2 px-4 focus:outline-none focus:ring-1 rounded-lg;
 }
 
 button[type="submit"] {

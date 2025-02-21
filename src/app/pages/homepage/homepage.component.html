@@ -1,0 +1,111 @@
+<div class="flex flex-col gap-10 pb-16">
+  <app-hero-header />
+  <div class="container">
+    <app-banner [variant]="Variant.Warning">
+      We are working on building out fwdr. Only the demo is available for now.
+      Please come back soon to check out our progress.
+    </app-banner>
+  </div>
+  <main class="flex flex-col gap-16">
+    <section id="api_sample" class="container flex flex-col gap-4">
+      <h1 class="text-3xl">Dead Simple API</h1>
+      <p>
+        Our goal is simplicity and efficiency. That's why our service is written
+        in Rust. Our primary endpoint is right on the root of our endpoint. Just
+        make a <code>POST</code> and we'll take care of the rest. You can call
+        our API from anywhere, on any device, and in any programming language.
+        Below is an example of how you can use fwdr directly in the browser.
+      </p>
+      <pre
+        class="bg-primary-300 p-4 w-full overflow-x-auto border border-primary-200 text-sm rounded-lg"
+      ><code>fetch('https://api.fwdr.dev', &#123;
+  method: 'POST',
+  body: &#123;
+    to: 'example&#64;fwdr.dev',
+    subject: "fwdr demo",
+    body: "Hey, Welcome to fwdr",
+  &#125;
+&#125;);</code></pre>
+    </section>
+    <section id="features" class="container flex flex-col gap-4">
+      <h1 class="text-3xl">Features</h1>
+      <ul
+        class="grid grid-auto-rows grid-cols-1 grid-auto-rows-[1fr] md:grid-cols-2 gap-4"
+      >
+        <li>
+          <app-feature-card name="E-mail Anywhere"
+            >E-mail anyone from anywhere and on any device. Very simple
+            integration, just call our API.</app-feature-card
+          >
+        </li>
+        <li>
+          <app-feature-card name="Dashboard"
+            >Users get access to their dashboard to see what e-mails they've
+            sent/received.</app-feature-card
+          >
+        </li>
+        <li>
+          <app-feature-card name="Attachments" isPro="true"
+            >Send attachments like a pro.</app-feature-card
+          >
+        </li>
+        <li>
+          <app-feature-card name="Multiple Recipients" isPro="true"
+            >Send a single e-mail to multiple addresses all in one
+            call.</app-feature-card
+          >
+        </li>
+        <li>
+          <app-feature-card
+            name="Carbon Copy and Blind Carbon Copy"
+            isPro="true"
+            >Support for BCC and CC at your fingertips.</app-feature-card
+          >
+        </li>
+        <li>
+          <app-feature-card name="Rejection Notifications" isPro="true"
+            >Find out if users received your e-mail and get notified if they
+            haven't.</app-feature-card
+          >
+        </li>
+      </ul>
+    </section>
+    <section
+      id="from_the_team"
+      class="bg-primary-300 border border-primary-200"
+    >
+      <div class="container py-8 flex flex-col gap-4">
+        <img
+          class="mx-auto rounded-full size-[128px]"
+          width="128"
+          height="128"
+          ngSrc="https://avatars.githubusercontent.com/u/104793781?v=4"
+          alt="Marcello's Profile Image"
+        />
+        <h1 class="text-3xl text-center">From the Team</h1>
+        <p>
+          We are still in our beta phase. We are doing some analysis on how we
+          can make our service better. Therefore, at any moment anything can
+          change; including the API itself. So, please keep that in mind until
+          we work towards our stable release of fwdr.
+        </p>
+        <p>
+          As mentioned above, our core values at fwdr are simplicity and
+          efficiency for everyone. What good is an e-mail forwarding service if
+          it's too cumbersome to use? We plan on having fwdr become feature-rich
+          &mdash; without compromising our core values.
+        </p>
+        <p>Stay tuned to witness fwdr blossom.</p>
+        <p>&mdash; Marcello, Core Developer</p>
+      </div>
+    </section>
+    <section id="learn_more" class="container flex flex-col gap-4">
+      <h1 class="text-3xl">Peak Your Interest?</h1>
+      <p>
+        Well, if you have any other questions regarding fwdr, fwd a message
+        below!
+      </p>
+      <app-contact-us />
+    </section>
+  </main>
+</div>

@@ -6,7 +6,7 @@ import { Variant } from "../../../enums/variants.enum";
   selector: "app-feature-card",
   template: `
     <div
-      class="flex flex-col gap-2 h-full bg-primary-300 border border-primary-200 hover:border-primary-50 transition-colors duration-300 p-4 cursor-default"
+      class="flex flex-col gap-2 h-full rounded-lg bg-primary-300 border border-primary-200 hover:border-primary-50 transition-colors duration-300 p-4 cursor-default"
     >
       <h1 class="inline-flex gap-1.5 items-start">
         {{ name() }}

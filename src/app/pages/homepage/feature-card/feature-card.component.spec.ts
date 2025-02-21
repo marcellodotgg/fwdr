@@ -1,23 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { FeatureCardComponent } from './feature-card.component';
+import { FeatureCardComponent } from "./feature-card.component";
 
-describe('FeatureCardComponent', () => {
+describe("FeatureCardComponent", () => {
   let component: FeatureCardComponent;
   let fixture: ComponentFixture<FeatureCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FeatureCardComponent]
-    })
-    .compileComponents();
+      imports: [FeatureCardComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(FeatureCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

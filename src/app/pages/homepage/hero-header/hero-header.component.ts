@@ -16,7 +16,7 @@ import { DemoComponent } from "./demo/demo.component";
         for everyone.
       </p>
       <div
-        class="flex flex-col gap-4 bg-primary-300 border border-primary-200 py-8"
+        class="flex flex-col gap-4 bg-primary-300 border border-primary-200 py-8 rounded-lg"
       >
         <h2 class="text-2xl">Try it Yourself</h2>
         <app-demo />

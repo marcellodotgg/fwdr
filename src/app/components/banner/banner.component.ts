@@ -7,7 +7,7 @@ import { NgClass } from "@angular/common";
   imports: [NgClass],
   template: `
     <div
-      class="flex items-center gap-4 justify-center border p-3 {{
+      class="flex items-center gap-4 justify-center border p-3 rounded-lg {{
         variantMap[variant()].bg
       }}"
     >

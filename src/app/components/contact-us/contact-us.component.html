@@ -1,43 +1,102 @@
 <form [formGroup]="form" class="flex flex-col gap-4" (ngSubmit)="sendEmail()">
   @if (message()) {
-    <app-banner [variant]="message()!.variant">{{message()!.content}}</app-banner>
+    <app-banner [variant]="message()!.variant">{{
+      message()!.content
+    }}</app-banner>
   }
   <div class="flex flex-col gap-4">
     <div class="flex flex-col gap-1">
       <label class="font-extrabold" for="contact_us_email">Email Address</label>
-      <input formControlName="email" required id="contact_us_email" type="email" placeholder="Enter Your E-mail Address" autocomplete="email" class="w-full border border-primary-100 ring-primary-50" maxlength="100" />
-      @if (form.hasError('email', 'email')) {
-        <div class="text-rose-700"> Please enter a valid e-mail.</div>
+      <input
+        formControlName="email"
+        required
+        id="contact_us_email"
+        type="email"
+        placeholder="Enter Your E-mail Address"
+        autocomplete="email"
+        class="w-full border border-primary-100 ring-primary-50"
+        maxlength="100"
+      />
+      @if (form.hasError("email", "email")) {
+        <div class="text-rose-700">Please enter a valid e-mail.</div>
       }
-      @if (form.hasError('required', 'email') && form.get('email')?.touched) {
+      @if (form.hasError("required", "email") && form.get("email")?.touched) {
         <div class="text-rose-700">This field is required.</div>
       }
     </div>
 
     <div class="flex flex-col gap-1">
       <label class="font-extrabold" for="contact_us_full_name">Full Name</label>
-      <input formControlName="name" required id="contact_us_full_name" type="text" placeholder="Full Name" autocomplete="name" class="w-full border border-primary-100 ring-primary-50" maxlength="40" />
-      @if (form.hasError('minlength', 'name')) {
-        <div class="text-rose-700"> Please enter at least {{ form.get('name')?.errors?.['minlength'].requiredLength }} characters.</div>
+      <input
+        formControlName="name"
+        required
+        id="contact_us_full_name"
+        type="text"
+        placeholder="Full Name"
+        autocomplete="name"
+        class="w-full border border-primary-100 ring-primary-50"
+        maxlength="40"
+      />
+      @if (form.hasError("minlength", "name")) {
+        <div class="text-rose-700">
+          Please enter at least
+          {{
+            form.get("name")?.errors?.["minlength"].requiredLength
+          }}
+          characters.
+        </div>
       }
-      @if (form.hasError('required', 'name') && form.get('name')?.touched) {
+      @if (form.hasError("required", "name") && form.get("name")?.touched) {
         <div class="text-rose-700">This field is required.</div>
       }
     </div>
 
     <div class="flex flex-col gap-1">
       <label class="font-extrabold" for="contact_us_body">Message</label>
-      <textarea id="contact_us_body" formControlName="body" placeholder="Enter your message.." class="w-full border border-primary-100 p-4 ring-primary-50 min-h-28 max-h-60" minlength="10" maxlength="400" required></textarea>
-      @if (form.hasError('minlength', 'body')) {
-        <div class="text-rose-700">Please fill out this form a little bit more.</div>
+      <textarea
+        id="contact_us_body"
+        formControlName="body"
+        placeholder="Enter your message.."
+        class="w-full border border-primary-100 p-4 ring-primary-50 min-h-28 max-h-60"
+        minlength="10"
+        maxlength="400"
+        required
+      ></textarea>
+      @if (form.hasError("minlength", "body")) {
+        <div class="text-rose-700">
+          Please fill out this form a little bit more.
+        </div>
       }
-      @if (form.hasError('required', 'body') && form.get('body')?.touched) {
+      @if (form.hasError("required", "body") && form.get("body")?.touched) {
         <div class="text-rose-700">This field is required.</div>
       }
     </div>
-    <button type="submit" class="bg-primary-100 hover:bg-primary-50 p-2" [disabled]="isLoading() || form.invalid">
+    <button
+      type="submit"
+      class="bg-primary-100 hover:bg-primary-50 p-2 rounded-lg"
+      [disabled]="isLoading() || form.invalid"
+    >
       @if (isLoading()) {
-        <svg class="size-5 mx-auto animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+        <svg
+          class="size-5 mx-auto animate-spin text-white"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            class="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            stroke-width="4"
+          ></circle>
+          <path
+            class="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          ></path>
+        </svg>
       } @else {
         Send <span class="hidden sm:inline">E-mail</span>
       }
