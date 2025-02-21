@@ -19,6 +19,16 @@
   @apply m-auto px-4;
 }
 
+html,
+body,
+app-root {
+  @apply flex flex-col h-full shrink-0;
+}
+
+footer {
+  @apply mt-auto;
+}
+
 body {
   background: var(--background-rgb);
   color: var(--foreground-rgb);

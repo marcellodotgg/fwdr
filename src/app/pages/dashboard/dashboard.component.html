@@ -1,1 +1,12 @@
-<p>dashboard works!</p>
+@let user = auth.currentUser$ | async;
+
+<main>
+  <div class="container flex flex-col gap-4">
+    <h1 class="text-3xl">Welcome back, {{ user?.given_name }}</h1>
+    <p>
+      This page is a work in progress, but please feel free to come back and
+      check out our progress soon.
+    </p>
+    <app-contact-us />
+  </div>
+</main>
