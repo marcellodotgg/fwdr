@@ -6,14 +6,17 @@ import {
   Validators,
 } from "@angular/forms";
 import { Mailer } from "../../services/mailer.service";
-import { finalize } from "rxjs";
+import { filter, finalize } from "rxjs";
 import { BannerComponent } from "../banner/banner.component";
 import { Variant } from "../../enums/variants.enum";
 import { AnalyticsService } from "../../services/analytics.service";
+import { AuthService } from "../../services/auth.service";
+import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
+import { AsyncPipe } from "@angular/common";
 
 @Component({
   selector: "app-contact-us",
-  imports: [ReactiveFormsModule, BannerComponent],
+  imports: [ReactiveFormsModule, BannerComponent, AsyncPipe],
   templateUrl: "./contact-us.component.html",
 })
 export class ContactUsComponent {
@@ -43,7 +46,17 @@ export class ContactUsComponent {
   constructor(
     private readonly mailer: Mailer,
     private readonly analytics: AnalyticsService,
-  ) {}
+    protected readonly auth: AuthService,
+  ) {
+    this.auth.currentUser$
+      .pipe(filter(Boolean), takeUntilDestroyed())
+      .subscribe((user) => {
+        this.form.patchValue({
+          name: `${user.given_name} ${user.family_name}`,
+          email: `${user.email}`,
+        });
+      });
+  }
 
   sendEmail(): void {
     this.isLoading.set(true);
