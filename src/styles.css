@@ -12,6 +12,8 @@
   --color-primary-100: #0c1b35;
   --color-primary-200: #091429;
   --color-primary-300: #030710;
+  --color-link: #3c82f8;
+  --color-link-100: #3574dd;
 }
 
 /*noinspection ALL*/
@@ -73,3 +75,20 @@ button[type="submit"] {
 button[type="submit"]:disabled {
   @apply opacity-80 cursor-not-allowed;
 }
+
+a.button {
+  @apply no-underline text-white;
+}
+
+a.button:hover {
+  @apply no-underline text-white;
+}
+
+a {
+  @apply text-link underline;
+}
+
+a:hover {
+  @apply text-link-100;
+}
+

@@ -11,6 +11,7 @@ import {
   tap,
 } from "rxjs";
 import { Router } from "@angular/router";
+import { User } from "../models/user.model";
 
 @Injectable({
   providedIn: "root",
@@ -55,15 +56,3 @@ export class AuthService {
       });
   }
 }
-
-type User = {
-  email: string;
-  given_name: string;
-  family_name: string;
-  picture: string;
-  verified: boolean;
-  provider: string;
-  provider_id: string;
-  created_at: Date;
-  updated_at: Date;
-};

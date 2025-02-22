@@ -14,7 +14,7 @@
       <a
         [href]="LOGIN_URL"
         id="google_sign_in_button"
-        class="mb-2 flex items-center gap-3 bg-primary-200 py-2 px-3 hover:bg-primary-100 rounded-lg"
+        class="button mb-2 flex items-center gap-3 bg-primary-200 py-2 px-3 hover:bg-primary-100 rounded-lg"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,9 @@
   </div>
 </nav>
 <div #drawer class="flex flex-col gap-6 drawer p-5">
-  @if (auth.currentUser$ | async; as user) {
+  @let user = auth.currentUser$ | async;
+
+  @if (user) {
     <section id="profile" class="flex items-center gap-4">
       <img class="rounded-full" [ngSrc]="user!.picture" width="54" height="54" alt="profile image" />
       <h2 class="text-lg">{{ user.given_name }} {{ user.family_name }}</h2>
@@ -44,6 +46,9 @@
   }
   <ul class="flex flex-col gap-2">
     <li><a routerLink="dashboard" routerLinkActive="active">Dashboard</a></li>
+    @if (user?.is_admin) {
+      <li><a routerLink="control-panel" routerLinkActive="active">Control Panel</a></li>
+    }
     <li><button (click)="logout()">Logout</button></li>
   </ul>
 </div>
