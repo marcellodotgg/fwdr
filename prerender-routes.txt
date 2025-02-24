@@ -1,5 +1,3 @@
 /
 /dashboard
 /control-panel
-/mail
-/mail/inbox
