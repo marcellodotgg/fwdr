@@ -1,14 +1,17 @@
 <nav class="py-4">
-  <div class="flex justify-end container">
+  <div class="flex justify-end px-4">
     @if (auth.currentUser$ | async; as currentUser) {
-      <button (click)="showDrawer()" class="rounded-full border-2 border-primary-100 p-1 hover:border-primary-50">
-      <img
-        [ngSrc]="currentUser.picture"
-        width="32"
-        height="32"
-        alt="profile image"
-        class="size-8 rounded-full"
-      />
+      <button
+        (click)="showDrawer()"
+        class="rounded-full border-2 border-primary-100 p-1 hover:border-primary-50"
+      >
+        <img
+          [ngSrc]="currentUser.picture"
+          width="32"
+          height="32"
+          alt="profile image"
+          class="size-8 rounded-full"
+        />
       </button>
     } @else {
       <a
@@ -40,19 +43,34 @@
 
   @if (user) {
     <section id="profile" class="flex items-center gap-4">
-      <img class="rounded-full" [ngSrc]="user!.picture" width="54" height="54" alt="profile image" />
+      <img
+        class="rounded-full"
+        [ngSrc]="user!.picture"
+        width="54"
+        height="54"
+        alt="profile image"
+      />
       <h2 class="text-lg">{{ user.given_name }} {{ user.family_name }}</h2>
     </section>
   }
   <ul class="flex flex-col gap-2">
     <li><a routerLink="dashboard" routerLinkActive="active">Dashboard</a></li>
+    <li><a routerLink="/mail/inbox" routerLinkActive="active">Mail</a></li>
     @if (user?.is_admin) {
-      <li><a routerLink="control-panel" routerLinkActive="active">Control Panel</a></li>
+      <li>
+        <a routerLink="control-panel" routerLinkActive="active"
+          >Control Panel</a
+        >
+      </li>
     }
     <li><button (click)="logout()">Logout</button></li>
   </ul>
 </div>
 
 @if (isDrawerOpen()) {
-  <div id="drawer_wrapper" class="drawer-wrapper backdrop-blur-xs" (click)="hideDrawer()"></div>
+  <div
+    id="drawer_wrapper"
+    class="drawer-wrapper backdrop-blur-xs"
+    (click)="hideDrawer()"
+  ></div>
 }

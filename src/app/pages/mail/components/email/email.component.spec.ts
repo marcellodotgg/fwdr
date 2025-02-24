@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ControlPanelComponent } from "./control-panel.component";
+import { EmailComponent } from "./email.component";
 
-describe("ControlPanelComponent", () => {
-  let component: ControlPanelComponent;
-  let fixture: ComponentFixture<ControlPanelComponent>;
+describe("EmailComponent", () => {
+  let component: EmailComponent;
+  let fixture: ComponentFixture<EmailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ControlPanelComponent],
+      imports: [EmailComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ControlPanelComponent);
+    fixture = TestBed.createComponent(EmailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ControlPanelComponent } from "./control-panel.component";
+import { InboxComponent } from "./inbox.component";
 
-describe("ControlPanelComponent", () => {
-  let component: ControlPanelComponent;
-  let fixture: ComponentFixture<ControlPanelComponent>;
+describe("InboxComponent", () => {
+  let component: InboxComponent;
+  let fixture: ComponentFixture<InboxComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ControlPanelComponent],
+      imports: [InboxComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ControlPanelComponent);
+    fixture = TestBed.createComponent(InboxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

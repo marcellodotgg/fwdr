@@ -1,0 +1,28 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+aside {
+  width: 292px;
+
+  ul li a {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+
+    &:hover {
+      background: var(--color-primary-100);
+    }
+
+    &.active {
+      background: var(--color-primary-200);
+      font-weight: bold;
+
+      &:hover {
+        background: var(--color-primary-100);
+      }
+    }
+  }
+}
