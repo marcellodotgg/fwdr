@@ -1,10 +1,11 @@
 :host {
   display: block;
-  height: 100%;
+  height: calc(100dvh - 171px);
 }
 
 aside {
   width: 292px;
+  flex-shrink: 0;
 
   ul li a {
     display: block;

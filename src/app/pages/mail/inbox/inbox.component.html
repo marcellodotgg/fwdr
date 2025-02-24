@@ -3,10 +3,10 @@
     <h1 class="p-4 text-lg">Inbox</h1>
     <ul>
       @for (email of emails(); track email.email_id) {
-        <li>
+        <li class="last:border-b border-primary-200">
           <button
             (click)="selected.set(email)"
-            class="flex flex-col gap-1.5 px-4 hover:bg-primary-100/30 border-y first:border-b-0 py-4 border-primary-200 w-full"
+            class="flex flex-col gap-1.5 px-4 hover:bg-primary-100/30 border-y border-b-0 py-4 border-primary-200 w-full"
             routerLinkActive="bg-primary-100/45"
             routerLink="/mail/inbox/{{ email.email_id }}"
           >
